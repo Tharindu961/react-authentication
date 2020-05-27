@@ -4,6 +4,11 @@ import './App.css';
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
+firebase.initializeApp({
+  apiKey:  "AIzaSyDMgho2QEZWQCI431FyWAlg-89qXTZ4WVc",
+  authDomain: "fir-auth-react-9a4d0.firebaseapp.com"
+})
+
 class App extends Component {
 
   state = { isSignedIn: false }
@@ -21,6 +26,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
     })
