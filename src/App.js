@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
-class App extends Component() {
+class App extends Component {
   state = { isSignedIn: false }
   render() {
   return (
@@ -15,7 +15,7 @@ class App extends Component() {
         <div>NOt Signed In!</div>
       )}
     </div>
-  );
+  )
   }
 }
 
