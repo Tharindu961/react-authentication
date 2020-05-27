@@ -19,15 +19,27 @@ class App extends Component {
       signInSuccess: () => false
     }
   }
+
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user })
+    })
+
+  }
+
+
   render() {
   return (
     <div className="App">
       {this.state.isSignedIn ? (
         <div>Signed In!</div>
       ) : (
-        <div>NOt Signed In!</div>
+        <StyledFirebaseAuth 
+          uiConfig={this.uiConfig}
+          firebaseAuth={firebase.auth()}
+        />
       )}
-    </div>
+   </div>
   )
   }
 }
