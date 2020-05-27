@@ -5,23 +5,15 @@ import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
 class App extends Component() {
+  state = { isSignedIn: false }
   render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {this.state.isSignedIn ? (
+        <div>Signed In!</div>
+      ) : (
+        <div>NOt Signed In!</div>
+      )}
     </div>
   );
   }
